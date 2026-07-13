@@ -47,33 +47,46 @@ Each page is self-contained: all CSS is inline in a `<style>` block. No external
 
 ## Before going live — placeholders to fill
 
-Some links are intentionally left as placeholders. Search the files for `#PASTE`, `#EBOOK`, `#BUNDLE`, `#SCENES`, `#STORE`, `#RESOURCES`, `#CREATOR` and replace with real URLs.
+Most links are already live. What's filled and what still needs a real URL:
 
-### `hub.html`
-- `#EBOOK-GUMROAD-LINK` — the ebook checkout
-- `#BUNDLE-GUMROAD-LINK` — the Creator System bundle
-- `#SCENES-GUMROAD-LINK` — Fifty Cinematic History Scenes
-- `#STORE-GUMROAD-LINK` — Gumroad store / profile
-- `#RESOURCES-PAGE-LINK` — the live URL of `resources.html` once deployed
+### `hub.html` — ✅ done
+All Gumroad links (ebook, bundle, scenes, store) are live, and the resources
+card links to `resources.html` on this site.
 
-### `resources.html`
+### `resources.html` — ⚠️ affiliate links still needed
 - 14 × `#PASTE-AMAZON-LINK` — one Amazon affiliate link per book
 - `#PASTE-ELEVENLABS-LINK` — ElevenLabs affiliate link
-- `#CREATOR-SYSTEM-LINK` — the Creator System bundle
+- ✅ the Creator System link is live
 
-### `index.html` (sampler)
-- The Kit form is embedded via `<script ... data-uid="ad32b06c50" ...>`. The form's fields, wording, and styling are configured **in Kit**, not here — editing the form in Kit updates the page automatically.
+### `index.html` (sampler) — ✅ done
+Both signup forms post natively to the Kit form endpoint (see below).
 
-### All pages
-- The footer Facebook link points to `facebook.com/historyaiillustration`. Update it once the correct/working Facebook URL is confirmed.
+### All pages — ✅ done
+Footer social links point to Instagram `@historyaiillustration` and the
+current Facebook page URL.
 
 ---
 
 ## The Kit form (sampler signup)
 
-- The sampler page loads a Kit (ConvertKit) form by its embed script.
-- **Form appearance, wording, fields, and the sampler delivery are all managed inside Kit** — not in this repo. To change how the form looks or what it says, edit the form in Kit; the page picks up changes automatically.
-- Double opt-in is on: subscribers get a confirmation email, then the sampler PDF.
+The sampler page posts email signups **directly to the Kit form endpoint** —
+a plain HTML form, no JavaScript embed, so it works even with JS disabled:
+
+```html
+<form action="https://app.kit.com/forms/9481638/subscriptions" method="post" target="_blank">
+  <input name="email_address" type="email" required>
+</form>
+```
+
+- The form's *appearance and wording* live in this repo (inline CSS/HTML).
+- The *delivery* lives in Kit: the sampler PDF is sent by the form's
+  **incentive email** (Kit → the form → Settings → Incentive). The PDF is not
+  in this repo.
+- Double opt-in is on: subscribers get a confirmation email first, then the
+  sampler PDF after confirming.
+- **Kit will not re-send the incentive email to an already-confirmed
+  address.** To test repeatedly, delete the test subscriber in Kit
+  (Grow → Subscribers) or use plus-aliases (`you+test1@gmail.com`).
 
 ---
 
