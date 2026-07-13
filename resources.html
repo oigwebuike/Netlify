@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books &amp; Tools Behind the Stories — HAISTRY</title>
+<meta name="description" content="The books and tools behind HAISTRY's illustrated history. Every source that shaped What Happened Next.">
+<style>
+  :root{
+    --bg:#0a0e14; --card:#0e141e; --card-hover:#141c28;
+    --ink:#e8e4dc; --ink-soft:#9aa4b2; --ink-faint:#5a6472;
+    --gold:#c9a24a; --blue:#4a7fd0; --line:#1e2733;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);
+    font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;opacity:.25;pointer-events:none;z-index:0;
+    mask-image:radial-gradient(ellipse 80% 55% at 50% 25%,#000 40%,transparent 100%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 55% at 50% 25%,#000 40%,transparent 100%)}
+  .wrap{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:0 22px 80px}
+  header{text-align:center;padding:60px 0 30px}
+  .diamond{color:var(--blue);font-size:12px;vertical-align:middle}
+  .brand{font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:14px;letter-spacing:7px;color:var(--ink);text-transform:uppercase;margin-left:6px}
+  h1{margin-top:26px;font-size:clamp(28px,6vw,40px);line-height:1.1;font-weight:400;letter-spacing:-.5px}
+  h1 em{font-style:italic;color:var(--gold)}
+  .sub{margin-top:16px;color:var(--ink-soft);font-size:15px;font-style:italic;max-width:440px;margin-left:auto;margin-right:auto}
+  .rule{width:44px;height:1px;background:var(--gold);margin:26px auto 0}
+  .disclosure{margin:34px 0 8px;padding:14px 18px;border:1px solid var(--line);background:var(--card);border-radius:8px;font-size:12.5px;font-style:italic;color:var(--ink-faint);line-height:1.55}
+  .disclosure strong{color:var(--ink-soft);font-style:normal}
+  .intro{margin:30px 0 8px;color:var(--ink-soft);font-size:15px}
+  .intro p{margin-bottom:12px}
+  .section-label{display:flex;align-items:center;gap:14px;margin:44px 0 16px;font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-faint)}
+  .section-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .chapter{font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:22px 0 10px;opacity:.85}
+  a.entry{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:11px;color:var(--ink);transition:border-color .2s,background .2s,transform .2s}
+  a.entry:hover{background:var(--card-hover);border-color:#33445a;transform:translateY(-2px)}
+  a.entry:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .entry-row{display:flex;align-items:center;gap:14px}
+  .entry-body{flex:1;min-width:0}
+  .entry-story{font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}
+  .entry-title{font-size:16px;line-height:1.3}
+  .entry-title em{color:var(--ink);font-style:italic}
+  .entry-why{font-size:13px;color:var(--ink-soft);font-style:italic;margin-top:4px;line-height:1.5}
+  .entry-arrow{flex-shrink:0;color:var(--ink-faint);font-size:18px;transition:transform .2s,color .2s}
+  a.entry:hover .entry-arrow{transform:translateX(3px);color:var(--ink)}
+  .entry-icon{font-size:20px;width:26px;text-align:center;flex-shrink:0}
+  .band{background:linear-gradient(180deg,rgba(74,127,208,.10),rgba(74,127,208,.02));border:1px solid #2b3d59;border-radius:12px;text-align:center;padding:30px 24px;margin:50px 0 10px}
+  .band .k{font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .band p{color:var(--ink-soft);font-style:italic;font-size:15px;max-width:400px;margin:0 auto 18px}
+  .btn{display:inline-block;background:var(--gold);color:#0a0e14;text-decoration:none;font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 26px;border-radius:8px;font-weight:bold}
+  .btn:hover{background:#dab55e}
+  footer{text-align:center;margin-top:48px;color:var(--ink-faint);font-size:13px}
+  footer .social{margin-bottom:12px;font-family:'SF Mono',ui-monospace,Menlo,monospace;letter-spacing:1px;font-size:12px}
+  footer .social a{color:var(--ink-soft);text-decoration:none}
+  footer .social a:hover{color:var(--gold)}
+  footer .fine{font-style:italic}
+  @media (max-width:440px){.entry-why{font-size:12.5px}header{padding:44px 0 26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div><span class="diamond">&#9670;</span><span class="brand">HAISTRY</span></div>
+    <h1>Books &amp; Tools<br>Behind the <em>Stories</em></h1>
+    <p class="sub">Every story I tell stands on the work of great historians. These are the books and tools behind HAISTRY.</p>
+    <div class="rule"></div>
+  </header>
+
+  <div class="disclosure">
+    <strong>Transparency / Werbung:</strong> This page contains affiliate links. If you buy through them I may earn a small commission at no extra cost to you — it helps keep HAISTRY's stories free. As an Amazon Associate I earn from qualifying purchases.
+  </div>
+
+  <div class="intro">
+    <p>Every chapter of <em>What Happened Next</em> began with a stack of books by historians who spent years getting the story right. If a story stayed with you, the book behind it will give you the whole world it came from.</p>
+  </div>
+
+  <div class="section-label">The Books Behind the Stories</div>
+
+  <div class="chapter">Loyalty Unto Death</div>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">The 47 Ronin</div>
+      <div class="entry-title">John Allyn — <em>The 47 Ronin Story</em></div>
+      <div class="entry-why">The classic retelling of the vendetta — the two years of waiting, the December night.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">The 300 at Thermopylae</div>
+      <div class="entry-title">Paul Cartledge — <em>Thermopylae</em></div>
+      <div class="entry-why">A leading Sparta scholar separates the real Leonidas from the legend.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">The Siege of Masada</div>
+      <div class="entry-title">Josephus — <em>The Jewish War</em></div>
+      <div class="entry-why">The only ancient source — written by a man who fought in the war himself.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <div class="chapter">Empires That Fell in a Day</div>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">The Fall of Constantinople</div>
+      <div class="entry-title">Roger Crowley — <em>1453</em></div>
+      <div class="entry-why">The siege told hour by hour — the great cannon, the last liturgy in Hagia Sophia.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">The Fall of Tenochtitl&aacute;n</div>
+      <div class="entry-title">Camilla Townsend — <em>Fifth Sun</em></div>
+      <div class="entry-why">The conquest told from the Aztec side, from their own annals.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">The End of Carthage</div>
+      <div class="entry-title">Richard Miles — <em>Carthage Must Be Destroyed</em></div>
+      <div class="entry-why">The full rise and erasure of Rome's great rival.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <div class="chapter">Warriors Who Changed the Map</div>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">Genghis Khan</div>
+      <div class="entry-title">Jack Weatherford — <em>Genghis Khan and the Making of the Modern World</em></div>
+      <div class="entry-why">The book that changed how historians talk about him.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">Hannibal</div>
+      <div class="entry-title">Patrick N. Hunt — <em>Hannibal</em></div>
+      <div class="entry-why">By the archaeologist who spent decades tracing the Alps crossing on foot.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">Saladin &amp; The Crusades</div>
+      <div class="entry-title">Thomas Asbridge — <em>The Crusades</em></div>
+      <div class="entry-why">The whole two-hundred-year arc, from both the Christian and Muslim sides.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <div class="chapter">Against Impossible Odds</div>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">Shackleton's Endurance</div>
+      <div class="entry-title">Alfred Lansing — <em>Endurance</em></div>
+      <div class="entry-why">Widely called the greatest survival story ever put on paper. It is.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">Rorke's Drift</div>
+      <div class="entry-title">Saul David — <em>Zulu</em></div>
+      <div class="entry-why">Isandlwana and Rorke's Drift in one story — honest about the Zulu side.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">Mansa Musa</div>
+      <div class="entry-title">Michael A. Gomez — <em>African Dominion</em></div>
+      <div class="entry-why">The empires of medieval West Africa restored to their place in world history.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <div class="chapter">When Humanity Surprised Itself</div>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">The Christmas Truce</div>
+      <div class="entry-title">Stanley Weintraub — <em>Silent Night</em></div>
+      <div class="entry-why">Built from the soldiers' own letters — the carols, the football, and why it ended.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#PASTE-AMAZON-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#128220;</div><div class="entry-body">
+      <div class="entry-story">Themistocles at Salamis</div>
+      <div class="entry-title">Barry Strauss — <em>The Battle of Salamis</em></div>
+      <div class="entry-why">The naval battle that saved Greek civilization — won with a lie.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <div class="section-label">How I Make HAISTRY</div>
+  <div class="intro"><p>The tools behind the videos — for the creators who keep asking.</p></div>
+
+  <a class="entry" href="#PASTE-ELEVENLABS-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#127908;</div><div class="entry-body">
+      <div class="entry-story">Voiceover &amp; Narration</div>
+      <div class="entry-title">ElevenLabs</div>
+      <div class="entry-why">The AI voice tool behind HAISTRY's narration — natural, cinematic, and fast.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <a class="entry" href="#CREATOR-SYSTEM-LINK" target="_blank" rel="noopener">
+    <div class="entry-row"><div class="entry-icon">&#9889;</div><div class="entry-body">
+      <div class="entry-story">The Full System</div>
+      <div class="entry-title">The Complete AI Creator System</div>
+      <div class="entry-why">The 7-guide system behind how HAISTRY is made — create, grow, and earn.</div>
+    </div><div class="entry-arrow">&rarr;</div></div>
+  </a>
+
+  <div class="band">
+    <div class="k">New here?</div>
+    <p>Start with the free sampler — three complete illustrated stories from <em>What Happened Next</em>.</p>
+    <a class="btn" href="https://haistry.kit.com">Get the free sampler &rarr;</a>
+  </div>
+
+  <footer>
+    <div class="social">
+      <a href="https://instagram.com/historyaiillustration" target="_blank" rel="noopener">INSTAGRAM</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://facebook.com/historyaiillustration" target="_blank" rel="noopener">FACEBOOK</a>
+    </div>
+    <div class="fine">&copy; HAISTRY &middot; recommendations are genuine; links may earn a commission</div>
+  </footer>
+
+</div>
+</body>
+</html>
