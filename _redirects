@@ -1,0 +1,7 @@
+# The hub used to live at /hub — that URL is the Instagram bio link, so it must
+# keep working. The hub is now the homepage, so send /hub to the root.
+/hub        /    301
+/hub.html   /    301
+
+# The free sampler used to be the homepage. Anyone who saved that link now lands
+# on the hub, which is intended — the sampler is the first card on it.

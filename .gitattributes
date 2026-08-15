@@ -1,0 +1,3 @@
+# Netlify config files must stay LF — CRLF can break redirect parsing.
+_redirects text eol=lf
+_headers   text eol=lf

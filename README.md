@@ -8,11 +8,26 @@ The public site for **HAISTRY**, an AI-illustrated history brand. Static HTML pa
 
 | File | Purpose | Live path |
 |------|---------|-----------|
-| `index.html` | Free sampler landing page — email signup that delivers the free sampler via Kit | `/` |
-| `hub.html` | Link hub — the "everything in one place" page used as the Instagram bio link | `/hub.html` |
-| `resources.html` | Affiliate resources — the books and tools behind the stories | `/resources.html` |
+| `index.html` | Link hub — the front door, "everything in one place" | `/` |
+| `sampler.html` | Free sampler landing page — email signup that delivers the free sampler via Kit | `/sampler` |
+| `resources.html` | Affiliate resources — the books and tools behind the stories | `/resources` |
 
-> If you rename the sampler page to `index.html`, it becomes the homepage (`/`). Keep whichever page you want as the front door named `index.html`.
+The hub is the homepage. The sampler is reached from the **Start Here** card at the
+top of the hub, and from the closing CTA on `resources.html` — both link to `/sampler`.
+The sampler's masthead links back to `/`.
+
+> Whichever page you want as the front door must be the one named `index.html`.
+
+### Redirects
+
+`_redirects` (Netlify) keeps old links alive:
+
+| Old URL | Goes to | Why |
+|---------|---------|-----|
+| `/hub`, `/hub.html` | `/` | The hub used to live at `/hub` — **that URL is the Instagram bio link**, so it must keep resolving. |
+
+The sampler used to be the homepage; anyone with that link now lands on the hub,
+which is intended.
 
 ---
 
@@ -49,16 +64,16 @@ Each page is self-contained: all CSS is inline in a `<style>` block. No external
 
 Most links are already live. What's filled and what still needs a real URL:
 
-### `hub.html` — ✅ done
-All Gumroad links (ebook, bundle, scenes, store) are live, and the resources
-card links to `resources.html` on this site.
+### `index.html` (hub) — ✅ done
+All Gumroad links (ebook, bundle, scenes, store) are live, the resources card
+links to `resources.html`, and the Start Here card links to `/sampler`.
 
 ### `resources.html` — ⚠️ affiliate links still needed
 - 14 × `#PASTE-AMAZON-LINK` — one Amazon affiliate link per book
 - `#PASTE-ELEVENLABS-LINK` — ElevenLabs affiliate link
 - ✅ the Creator System link is live
 
-### `index.html` (sampler) — ✅ done
+### `sampler.html` — ✅ done
 Both signup forms post natively to the Kit form endpoint (see below).
 
 ### All pages — ✅ done
